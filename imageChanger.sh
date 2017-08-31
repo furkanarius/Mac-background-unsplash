@@ -2,11 +2,13 @@
 
 function random_wall () 
 {
+	# BACKUP IMAGES IN CASE OF GOING DARK
 	path_name="/Users/Furkan/Pictures/Selection/"
 	my_number=$[RANDOM%$1+1]
 	my_wall="$path_name$2-$my_number.jpg"
 	sec1='tell application "System Events" to set picture of every desktop to ("'
-	fooShell=$(/Users/furkan/latestPY/bin/python2.7 /Users/furkan/PycharmProjects/backgroundChnage/pull_and_change.py)
+	# IF INTERNET WORKS
+	fooShell=$(python PATH_TO_FILE/pull_and_change.py)
 	echo $fooShell
 	if [ "$fooShell" == "FAIL" ]
 	then
